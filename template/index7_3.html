@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
+    <!-- Load c3.css -->
+    <link href="https://c3js.org/css/c3-eb4b9be8.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/4.5/examples/dashboard/dashboard.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
+
+
+    <title>桃園市立圖書館</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+      <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3 text-center" href="#">智慧物聯網雲端圖書平台</a>
+      <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <input class="form-control form-control-dark" type="text" placeholder="搜尋" aria-label="Search">
+      <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+          <a class="nav-link" href="#">登出</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="container-fluid">
+      <div class="row my-3">
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse h4">
+          <div class="sidebar-sticky pt-3">
+            <ul class="nav flex-column">
+              <li class="nav-item ">
+                <a class="nav-link" href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                  首頁 <span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                  智慧學習
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>
+                  智慧社群
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                  智慧行政
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                  智慧管理
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+          <div class="container-fluid">
+            <h1>智慧社群：智慧推播子系統</h1>
+            <div class="row">
+              <div class="col-12 mt-3 h5">
+                <div class="card">
+                  <div class="card-header"><h2>問題管控</h2></div>
+                  <div class="card-body">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th>#</th>
+                          <th>題目</th>
+                          <th>正確率</th>
+                          <th></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th>1</th>
+                          <td>感測區域在幾樓？</td>
+                          <td>40%</td>
+                          <td>
+                            <div class="row">
+                              <div class="col">
+                                <button class="btn btn-primary btn-block btn-sm">修改</button>
+                              </div>
+                              <div class="col">
+                                <button class="btn btn-danger btn-block btn-sm">刪除</button>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th>2</th>
+                          <td>綠建築的最大特色是？</td>
+                          <td>22%</td>
+                          <td>
+                            <div class="row">
+                              <div class="col">
+                                <button class="btn btn-primary btn-block btn-sm">修改</button>
+                              </div>
+                              <div class="col">
+                                <button class="btn btn-danger btn-block btn-sm">刪除</button>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th>3</th>
+                          <td>圖書館的設計是？</td>
+                          <td>55%</td>
+                          <td>
+                            <div class="row">
+                              <div class="col">
+                                <button class="btn btn-primary btn-block btn-sm">修改</button>
+                              </div>
+                              <div class="col">
+                                <button class="btn btn-danger btn-block btn-sm">刪除</button>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="basicModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">問題設定</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group row">
+                <label for="colFormLabel" class="col-sm-2 col-form-label">題目</label>
+                <div class="col-sm-10">
+                  <input type="email" class="form-control" id="colFormLabel" placeholder="ex.[詢問]真的好玩嗎？">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="colFormLabel" class="col-sm-2 col-form-label">描述</label>
+                <div class="col-sm-10">
+                  <input type="email" class="form-control" id="colFormLabel" placeholder="ex.這個區域到底好不好">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="colFormLabel" class="col-sm-2 col-form-label">分類</label>
+                <div class="col-sm-10">
+                  <select class="form-control" id="colFormLabel" placeholder="ex.21">
+                    <option selected="">請選擇</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="colFormLabel" class="col-sm-2 col-form-label">選項一</label>
+                <div class="col-sm-8">
+                  <input type="email" class="form-control" id="colFormLabel" placeholder="ex.選項一">
+                </div>
+                <div class="col-sm-2">
+                  <button class="btn btn-primary">＋</button>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="colFormLabel" class="col-sm-2 col-form-label">起時間</label>
+                <div class="col-sm-4">
+                  <input type="time" class="form-control" id="colFormLabel" placeholder="ex.這個區域到底好不好">
+                </div>
+                <label for="colFormLabel" class="col-sm-2 col-form-label">訖時間</label>
+                <div class="col-sm-4">
+                  <input type="time" class="form-control" id="colFormLabel" placeholder="ex.這個區域到底好不好">
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">新增</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://getbootstrap.com/docs/4.5/examples/dashboard/dashboard.js"></script>
+    <!-- Load d3.js and c3.js -->
+    <script src="https://c3js.org/js/d3-5.8.2.min-c5268e33.js" charset="utf-8"></script>
+    <script src="https://c3js.org/js/c3.min-bc946ede.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
+  </body>
+</html>
+<script type="text/javascript">
+  $('table').DataTable({
+    "language": {
+      "processing":   "處理中...",
+      "loadingRecords": "載入中...",
+      "lengthMenu":   "顯示 _MENU_ 項結果",
+      "zeroRecords":  "沒有符合的結果",
+      "info":         "顯示第 _START_ 至 _END_ 項結果，共 _TOTAL_ 項",
+      "infoEmpty":    "顯示第 0 至 0 項結果，共 0 項",
+      "infoFiltered": "(從 _MAX_ 項結果中過濾)",
+      "infoPostFix":  "",
+      "search":       "搜尋:",
+      "paginate": {
+          "first":    "第一頁",
+          "previous": "上一頁",
+          "next":     "下一頁",
+          "last":     "最後一頁"
+      },
+      "aria": {
+          "sortAscending":  ": 升冪排列",
+          "sortDescending": ": 降冪排列"
+      }
+    }
+  });
+
+var chart = c3.generate({
+  bindto: '#chart',
+  data: {
+    columns: [
+      ['data1', 30, 200, 110, 400, 150, 250],
+      ['data2', 50, 20, 10, 40, 15, 25],
+    ]
+  }
+});
+var chart = c3.generate({
+  bindto: '#chart2',
+  data: {
+      // iris data from R
+      columns: [
+          ['data1', 30],
+          ['data2', 120],
+          ['data3', 30],
+          ['data4', 120],
+          ['data5', 30],
+          ['data6', 120],
+          ['data7', 30],
+          ['data8', 120],
+      ],
+      type : 'pie',
+      onclick: function (d, i) { console.log("onclick", d, i); },
+      onmouseover: function (d, i) { console.log("onmouseover", d, i); },
+      onmouseout: function (d, i) { console.log("onmouseout", d, i); }
+  }
+});
+var chart = c3.generate({
+  bindto: '#chart3',
+  data: {
+      columns: [
+          ['data1', 300, 350, 300, 0, 0, 100],
+          ['data2', 130, 100, 140, 200, 150, 50]
+      ],
+      types: {
+          data1: 'step',
+          data2: 'area-step'
+      }
+  }
+});
+var chart = c3.generate({
+  bindto: '#chart4',
+  data: {
+      columns: [
+          ['data1', 30, 200, 100, 400, 150, 250],
+          ['data2', 130, 100, 140, 200, 150, 50]
+      ],
+      type: 'bar'
+  },
+  bar: {
+      width: {
+          ratio: 0.5 // this makes bar width 50% of length between ticks
+      }
+      // or
+      //width: 100 // this makes bar width 100px
+  }
+});
+</script>

@@ -1,0 +1,686 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
+  <!-- Load c3.css -->
+  <link href="https://c3js.org/css/c3-eb4b9be8.css" rel="stylesheet">
+  <link href="https://getbootstrap.com/docs/4.5/examples/dashboard/dashboard.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
+
+
+  <title>桃園市立圖書館</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3 text-center" href="#">智慧物聯網雲端圖書平台</a>
+    <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse"
+      data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <input class="form-control form-control-dark" type="text" placeholder="搜尋" aria-label="Search">
+    <ul class="navbar-nav px-3">
+      <li class="nav-item text-nowrap">
+        <a class="nav-link" href="#">登出</a>
+      </li>
+    </ul>
+  </nav>
+  <div class="container-fluid">
+    <div class="row my-3">
+      <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse h4">
+        <div class="sidebar-sticky pt-3">
+          <ul class="nav flex-column">
+            <li class="nav-item ">
+              <a class="nav-link" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="feather feather-home">
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                  <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                首頁 <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active " href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="feather feather-layers">
+                  <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                  <polyline points="2 17 12 22 22 17"></polyline>
+                  <polyline points="2 12 12 17 22 12"></polyline>
+                </svg>
+                智慧學習
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="feather feather-file">
+                  <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+                  <polyline points="13 2 13 9 20 9"></polyline>
+                </svg>
+                智慧社群
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="feather feather-users">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                智慧行政
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="feather feather-shopping-cart">
+                  <circle cx="9" cy="21" r="1"></circle>
+                  <circle cx="20" cy="21" r="1"></circle>
+                  <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+                智慧管理
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+        <div class="container-fluid">
+          <h1>智慧學習：行動圖書子系統</h1>
+          <div class="row">
+            <div class="col-12 mt-3">
+              <div class="card">
+                <div class="card-header">
+                  <h2>書籍推薦</h2>
+                </div>
+                <div class="card-body">
+                  <ul class="nav nav-pills nav-fill">
+                    <li class="nav-item">
+                      <a class="nav-link active" data-toggle="pill" href="#pills-new">新進書籍</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" data-toggle="pill" href="#pills-hot">熱門書籍</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" data-toggle="pill" href="#pills-long">長青書籍</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" data-toggle="pill" href="#pills-gossip">時事書籍</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" data-toggle="pill" href="#pills-hobby">性向推薦</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" data-toggle="pill" href="#pills-group">同好書籍</a>
+                    </li>
+                  </ul>
+                  <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-new" role="tabpanel"
+                      aria-labelledby="pills-home-tab">
+                      <div class="row mt-3">
+                        <div class="col-4">
+                          <div class="card">
+                            <div class="card-header">已推薦書籍</div>
+                            <div class="card-body">
+                              <table class="table table-striped table-bordered">
+                                <thead>
+                                  <tr>
+                                    <th>#</th>
+                                    <th>年齡</th>
+                                    <th>書名</th>
+                                    <th>編輯</th>
+                                    <th>刪除</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <th>1</th>
+                                    <td>20~30</td>
+                                    <td>書籍1</td>
+                                    <td>
+                                      <button class="btn btn-primary">編輯</button>
+                                    </td>
+                                    <td>
+                                      <button class="btn btn-danger">刪除</button>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <th>2</th>
+                                    <td>30~40</td>
+                                    <td>書籍2</td>
+                                    <td>
+                                      <button class="btn btn-primary">編輯</button>
+                                    </td>
+                                    <td>
+                                      <button class="btn btn-danger">刪除</button>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <th>3</th>
+                                    <td>40~50</td>
+                                    <td>書籍3</td>
+                                    <td>
+                                      <button class="btn btn-primary">編輯</button>
+                                    </td>
+                                    <td>
+                                      <button class="btn btn-danger">刪除</button>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <th>4</th>
+                                    <td>50~60</td>
+                                    <td>書籍4</td>
+                                    <td>
+                                      <button class="btn btn-primary">編輯</button>
+                                    </td>
+                                    <td>
+                                      <button class="btn btn-danger">刪除</button>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-4">
+                          <div class="card">
+                            <div class="card-header">選擇書籍</div>
+                            <div class="card-body">
+                              <div class="form-group row">
+                                <label class="col-2 col-form-label">書名</label>
+                                <div class="col-10">
+                                  <input type="text" value="書籍" class="form-control">
+                                </div>
+                              </div>
+                              <table class="table table-striped table-bordered">
+                                <thead>
+                                  <tr>
+                                    <th>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                        <label class="form-check-label" for="defaultCheck1">
+                                          全選
+                                        </label>
+                                      </div>
+                                    </th>
+                                    <th>書名</th>
+                                    <th>推薦</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <th>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                      </div>
+                                    </th>
+                                    <td>書籍1</td>
+                                    <td>
+                                      <button class="btn btn-secondary">選擇</button>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <th>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                      </div>
+                                    </th>
+                                    <td>書籍2</td>
+                                    <td>
+                                      <button class="btn btn-secondary">選擇</button>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <th>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                      </div>
+                                    </th>
+                                    <td>書籍3</td>
+                                    <td>
+                                      <button class="btn btn-secondary">選擇</button>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-4">
+                          <div class="card">
+                            <div class="card-header">推薦設定</div>
+                            <div class="card-body">
+                              <div class="form-group row">
+                                <label class="col-2 col-form-label">推薦書籍</label>
+                                <label class="col-10 col-form-label">書籍1、書籍2、書籍3、書籍4</label>
+                              </div>
+                              <div class="form-group row">
+                                <label class="col-2 col-form-label">推薦目標</label>
+                                <div class="col-3">
+                                  <button class="btn btn-secondary">選擇</button>
+                                </div>
+                                <label class="col-7 col-form-label">王大明、王小明、王三明</label>
+                              </div>
+                              <div class="form-group row">
+                                <label class="col-2 col-form-label">推薦頻率</label>
+                                <div class="col-10">
+                                  <select class="form-control">
+                                    <option selected="">每次經過</option>
+                                    <option>一天一次</option>
+                                  </select>
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <label class="col-2 col-form-label">推薦時段</label>
+                                <div class="col-4">
+                                  <input type="date" value="書籍" class="form-control">
+                                </div>
+                                <label class="col-2 col-form-label">到</label>
+                                <div class="col-4">
+                                  <input type="date" value="書籍" class="form-control">
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <label class="col-2 col-form-label">推薦位置</label>
+                                <div class="col-10">
+                                  <select class="form-control">
+                                    <option selected="">2F入口</option>
+                                  </select>
+                                </div>
+                              </div>
+                              <button class="btn btn-primary">新增</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- <table class="table table-striped table-bordered">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">書名</th>
+                            <th scope="col">分類</th>
+                            <th scope="col">觸及率</th>
+                            <th scope="col">推薦</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">1</th>
+                            <td>如何成為Youtuber</td>
+                            <td>新媒體</td>
+                            <td>1000</td>
+                            <td>
+                              <input type="button" name="recommend" class="btn btn-warning btn-sm" value="推薦此書">
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">2</th>
+                            <td>生活過得更精彩</td>
+                            <td>生活</td>
+                            <td>549</td>
+                            <td>
+                              <input type="button" name="recommend" class="btn btn-warning btn-sm" value="推薦此書">
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">3</th>
+                            <td>蘆洲受玄宮廟口開講 : 幽冥.日常學術講座 = What the hell : are they doing? / 蘆洲受玄宮主辦</td>
+                            <td>宗教信仰</td>
+                            <td>129</td>
+                            <td>
+                              <input type="button" name="recommend" class="btn btn-warning btn-sm" value="推薦此書">
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">4</th>
+                            <td>轉型正義之路 : 島嶼的過去與未來 / 周婉窈作</td>
+                            <td>現代主義</td>
+                            <td>94</td>
+                            <td>
+                              <input type="button" name="recommend" class="btn btn-warning btn-sm" value="推薦此書">
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">5</th>
+                            <td>福爾摩沙島史 / Ludwig Riess原著 ; 姚紹基導讀/編譯</td>
+                            <td>歷史原著</td>
+                            <td>88</td>
+                            <td>
+                              <input type="button" name="recommend" class="btn btn-warning btn-sm" value="推薦此書">
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">6</th>
+                            <td>上什麼樣的學校好呢?</td>
+                            <td>玩生活系列</td>
+                            <td>84</td>
+                            <td>
+                              <input type="button" name="recommend" class="btn btn-warning btn-sm" value="推薦此書">
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">7</th>
+                            <td>亨利的帽子</td>
+                            <td>繪本館</td>
+                            <td>29</td>
+                            <td>
+                              <input type="button" name="recommend" class="btn btn-warning btn-sm" value="推薦此書">
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">8</th>
+                            <td>99%零失誤精準工作術 : 36個正確高效的職場好習慣</td>
+                            <td>Unique系列</td>
+                            <td>17</td>
+                            <td>
+                              <input type="button" name="recommend" class="btn btn-warning btn-sm" value="推薦此書">
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">9</th>
+                            <td>殯葬衛生</td>
+                            <td>生活科學系. 生命事業管理領域</td>
+                            <td>5</td>
+                            <td>
+                              <input type="button" name="recommend" class="btn btn-warning btn-sm" value="推薦此書">
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">10</th>
+                            <td>今古奇觀(五) : 移花接木 = Marvellous tales of the past and present</td>
+                            <td>圖說經典</td>
+                            <td>4</td>
+                            <td>
+                              <input type="button" name="recommend" class="btn btn-warning btn-sm" value="推薦此書">
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">11</th>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                            <td>@twitter</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">11</th>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                            <td>@twitter</td>
+                            <td></td>
+
+                          </tr>
+                          <tr>
+                            <th scope="row">11</th>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                            <td>@twitter</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">11</th>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                            <td>@twitter</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">11</th>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                            <td>@twitter</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">11</th>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                            <td>@twitter</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">11</th>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                            <td>@twitter</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">11</th>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                            <td>@twitter</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">11</th>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                            <td>@twitter</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">11</th>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                            <td>@twitter</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">11</th>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                            <td>@twitter</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">11</th>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                            <td>@twitter</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">11</th>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                            <td>@twitter</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">11</th>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                            <td>@twitter</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">11</th>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                            <td>@twitter</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">11</th>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                            <td>@twitter</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">11</th>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                            <td>@twitter</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">11</th>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                            <td>@twitter</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">11</th>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                            <td>@twitter</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">11</th>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                            <td>@twitter</td>
+                            <td></td>
+                          </tr>
+                        </tbody>
+                      </table> -->
+                    </div>
+                    <div class="tab-pane fade" id="pills-hot" role="tabpanel" aria-labelledby="pills-profile-tab">
+                      hot
+                    </div>
+                    <div class="tab-pane fade" id="pills-long" role="tabpanel" aria-labelledby="pills-contact-tab">
+                      long
+                    </div>
+                    <div class="tab-pane fade" id="pills-gossip" role="tabpanel" aria-labelledby="pills-contact-tab">
+                      gossip
+                    </div>
+                    <div class="tab-pane fade" id="pills-hobby" role="tabpanel" aria-labelledby="pills-contact-tab">
+                      hobby
+                    </div>
+                    <div class="tab-pane fade" id="pills-group" role="tabpanel" aria-labelledby="pills-contact-tab">
+                      group
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+  <script src="https://getbootstrap.com/docs/4.5/examples/dashboard/dashboard.js"></script>
+  <!-- Load d3.js and c3.js -->
+  <script src="https://c3js.org/js/d3-5.8.2.min-c5268e33.js" charset="utf-8"></script>
+  <script src="https://c3js.org/js/c3.min-bc946ede.js"></script>
+  <script type="text/javascript" charset="utf8"
+    src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
+</body>
+
+</html>
+<script type="text/javascript">
+  $('table1').DataTable({
+    "language": {
+      "processing": "處理中...",
+      "loadingRecords": "載入中...",
+      "lengthMenu": "顯示 _MENU_ 項結果",
+      "zeroRecords": "沒有符合的結果",
+      "info": "顯示第 _START_ 至 _END_ 項結果，共 _TOTAL_ 項",
+      "infoEmpty": "顯示第 0 至 0 項結果，共 0 項",
+      "infoFiltered": "(從 _MAX_ 項結果中過濾)",
+      "infoPostFix": "",
+      "search": "搜尋:",
+      "paginate": {
+        "first": "第一頁",
+        "previous": "上一頁",
+        "next": "下一頁",
+        "last": "最後一頁"
+      },
+      "aria": {
+        "sortAscending": ": 升冪排列",
+        "sortDescending": ": 降冪排列"
+      }
+    }
+  });
+
+  var chart = c3.generate({
+    bindto: '#chart',
+    data: {
+      columns: [
+        ['data1', 30, 200, 110, 400, 150, 250],
+        ['data2', 50, 20, 10, 40, 15, 25],
+      ]
+    }
+  });
+  var chart = c3.generate({
+    bindto: '#chart2',
+    data: {
+      // iris data from R
+      columns: [
+        ['data1', 30],
+        ['data2', 120],
+        ['data3', 30],
+        ['data4', 120],
+        ['data5', 30],
+        ['data6', 120],
+        ['data7', 30],
+        ['data8', 120],
+      ],
+      type: 'pie',
+      onclick: function (d, i) { console.log("onclick", d, i); },
+      onmouseover: function (d, i) { console.log("onmouseover", d, i); },
+      onmouseout: function (d, i) { console.log("onmouseout", d, i); }
+    }
+  });
+  var chart = c3.generate({
+    bindto: '#chart3',
+    data: {
+      columns: [
+        ['data1', 300, 350, 300, 0, 0, 100],
+        ['data2', 130, 100, 140, 200, 150, 50]
+      ],
+      types: {
+        data1: 'step',
+        data2: 'area-step'
+      }
+    }
+  });
+  var chart = c3.generate({
+    bindto: '#chart4',
+    data: {
+      columns: [
+        ['data1', 30, 200, 100, 400, 150, 250],
+        ['data2', 130, 100, 140, 200, 150, 50]
+      ],
+      type: 'bar'
+    },
+    bar: {
+      width: {
+        ratio: 0.5 // this makes bar width 50% of length between ticks
+      }
+      // or
+      //width: 100 // this makes bar width 100px
+    }
+  });
+</script>

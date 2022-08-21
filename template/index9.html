@@ -1,0 +1,1676 @@
+<!DOCTYPE html>
+<html lang="en" style="">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- Load c3.css -->
+    <link href="https://c3js.org/css/c3-eb4b9be8.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/4.5/examples/dashboard/dashboard.css" rel="stylesheet">
+    <title>桃園市立圖書館</title>
+  </head>
+<body>
+  <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3 text-center" href="#">智慧物聯網雲端圖書平台</a> <button aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler position-absolute d-md-none collapsed" data-target="#sidebarMenu" data-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button> <input aria-label="Search" class="form-control form-control-dark" placeholder="搜尋" type="text">
+    <ul class="navbar-nav px-3">
+      <li class="nav-item text-nowrap">
+        <a class="nav-link" href="#">登出</a>
+      </li>
+    </ul>
+  </nav>
+  <div class="container-fluid">
+    <div class="row my-3">
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+          <div class="sidebar-sticky pt-3">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                  首頁 <span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                  智慧學習
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>
+                  智慧社群
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                  智慧行政
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                  智慧管理
+                </a>
+              </li>
+            </ul>
+
+            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+              <span>推播專區</span>
+              <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-circle"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+              </a>
+            </h6>
+            <ul class="nav flex-column mb-2">
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                  路線推薦
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                  書籍推薦
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                  建築特色推薦
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                  活動推薦
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      <main class="col-md-9 ml-sm-auto col-lg-10 px-md-4" role="main">
+        <div class="container">
+          <h1>物聯網設備管理模組</h1>
+          <div class="panel panel-default beacons-content table-responsive">
+            <table class="table table-striped">
+              <tbody>
+                <tr>
+                  <th width="5%">ID</th>
+                  <th width="10%">Name</th>
+                  <th width="30%">UUID</th>
+                  <th width="10%">MAJOR</th>
+                  <th width="10%">MINOR</th>
+                  <th style="width:20vw">URL</th>
+                  <th width="5%"></th>
+                  <th width="5%"></th>
+                </tr><!-- ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">24</td>
+                  <td class="ng-binding">水塔</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">9</td>
+                  <td class="ng-binding">9</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="https://www.facebook.com/notes/%E5%9C%8B%E7%AB%8B%E9%AB%98%E9%9B%84%E5%B8%AB%E7%AF%84%E5%A4%A7%E5%AD%B8-national-kaohsiung-normal-university/%E6%B0%B4%E5%A1%94/504929413176786/">https://www.facebook.com/notes/%E5%9C%8B%E7%AB%8B%E9%AB%98%E9%9B%84%E5%B8%AB%E7%AF%84%E5%A4%A7%E5%AD%B8-national-kaohsiung-normal-university/%E6%B0%B4%E5%A1%94/504929413176786/</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">25</td>
+                  <td class="ng-binding">文學大樓</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">10</td>
+                  <td class="ng-binding">10</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="https://www.facebook.com/notes/%E5%9C%8B%E7%AB%8B%E9%AB%98%E9%9B%84%E5%B8%AB%E7%AF%84%E5%A4%A7%E5%AD%B8-national-kaohsiung-normal-university/%E6%96%87%E5%AD%B8%E5%A4%A7%E6%A8%93/504931186509942/">https://www.facebook.com/notes/%E5%9C%8B%E7%AB%8B%E9%AB%98%E9%9B%84%E5%B8%AB%E7%AF%84%E5%A4%A7%E5%AD%B8-national-kaohsiung-normal-university/%E6%96%87%E5%AD%B8%E5%A4%A7%E6%A8%93/504931186509942/</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">26</td>
+                  <td class="ng-binding">藝術大樓</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">11</td>
+                  <td class="ng-binding">11</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="https://www.facebook.com/notes/%E5%9C%8B%E7%AB%8B%E9%AB%98%E9%9B%84%E5%B8%AB%E7%AF%84%E5%A4%A7%E5%AD%B8-national-kaohsiung-normal-university/%E8%97%9D%E8%A1%93%E5%A4%A7%E6%A8%93/504934216509639/">https://www.facebook.com/notes/%E5%9C%8B%E7%AB%8B%E9%AB%98%E9%9B%84%E5%B8%AB%E7%AF%84%E5%A4%A7%E5%AD%B8-national-kaohsiung-normal-university/%E8%97%9D%E8%A1%93%E5%A4%A7%E6%A8%93/504934216509639/</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">27</td>
+                  <td class="ng-binding">中庭圓環</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">12</td>
+                  <td class="ng-binding">12</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="https://www.facebook.com/notes/%E5%9C%8B%E7%AB%8B%E9%AB%98%E9%9B%84%E5%B8%AB%E7%AF%84%E5%A4%A7%E5%AD%B8-national-kaohsiung-normal-university/%E4%B8%AD%E5%BA%AD%E5%9C%93%E7%92%B0/504935133176214/">https://www.facebook.com/notes/%E5%9C%8B%E7%AB%8B%E9%AB%98%E9%9B%84%E5%B8%AB%E7%AF%84%E5%A4%A7%E5%AD%B8-national-kaohsiung-normal-university/%E4%B8%AD%E5%BA%AD%E5%9C%93%E7%92%B0/504935133176214/</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">28</td>
+                  <td class="ng-binding">研究大樓</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">13</td>
+                  <td class="ng-binding">13</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="https://www.facebook.com/notes/%E5%9C%8B%E7%AB%8B%E9%AB%98%E9%9B%84%E5%B8%AB%E7%AF%84%E5%A4%A7%E5%AD%B8-national-kaohsiung-normal-university/%E7%A0%94%E7%A9%B6%E5%A4%A7%E6%A8%93/504936019842792/">https://www.facebook.com/notes/%E5%9C%8B%E7%AB%8B%E9%AB%98%E9%9B%84%E5%B8%AB%E7%AF%84%E5%A4%A7%E5%AD%B8-national-kaohsiung-normal-university/%E7%A0%94%E7%A9%B6%E5%A4%A7%E6%A8%93/504936019842792/</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">29</td>
+                  <td class="ng-binding">體育館</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">14</td>
+                  <td class="ng-binding">14</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="https://www.facebook.com/notes/%E5%9C%8B%E7%AB%8B%E9%AB%98%E9%9B%84%E5%B8%AB%E7%AF%84%E5%A4%A7%E5%AD%B8-national-kaohsiung-normal-university/%E9%AB%94%E8%82%B2%E9%A4%A8/504939816509079/">https://www.facebook.com/notes/%E5%9C%8B%E7%AB%8B%E9%AB%98%E9%9B%84%E5%B8%AB%E7%AF%84%E5%A4%A7%E5%AD%B8-national-kaohsiung-normal-university/%E9%AB%94%E8%82%B2%E9%A4%A8/504939816509079/</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">30</td>
+                  <td class="ng-binding">蓮花池</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">15</td>
+                  <td class="ng-binding">15</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="https://www.facebook.com/notes/%E5%9C%8B%E7%AB%8B%E9%AB%98%E9%9B%84%E5%B8%AB%E7%AF%84%E5%A4%A7%E5%AD%B8-national-kaohsiung-normal-university/%E8%93%AE%E8%8A%B1%E6%B1%A0/504940976508963/">https://www.facebook.com/notes/%E5%9C%8B%E7%AB%8B%E9%AB%98%E9%9B%84%E5%B8%AB%E7%AF%84%E5%A4%A7%E5%AD%B8-national-kaohsiung-normal-university/%E8%93%AE%E8%8A%B1%E6%B1%A0/504940976508963/</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">31</td>
+                  <td class="ng-binding">綜合大樓</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">16</td>
+                  <td class="ng-binding">16</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href=""></a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">32</td>
+                  <td class="ng-binding">涵詠樓</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">17</td>
+                  <td class="ng-binding">17</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="https://www.facebook.com/notes/%E5%9C%8B%E7%AB%8B%E9%AB%98%E9%9B%84%E5%B8%AB%E7%AF%84%E5%A4%A7%E5%AD%B8-national-kaohsiung-normal-university/%E6%B6%B5%E8%A9%A0%E6%A8%93/504945939841800/">https://www.facebook.com/notes/%E5%9C%8B%E7%AB%8B%E9%AB%98%E9%9B%84%E5%B8%AB%E7%AF%84%E5%A4%A7%E5%AD%B8-national-kaohsiung-normal-university/%E6%B6%B5%E8%A9%A0%E6%A8%93/504945939841800/</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">33</td>
+                  <td class="ng-binding">蘭苑</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">18</td>
+                  <td class="ng-binding">18</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href=""></a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">34</td>
+                  <td class="ng-binding">芝心樓</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">19</td>
+                  <td class="ng-binding">19</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="https://www.facebook.com/notes/%E5%9C%8B%E7%AB%8B%E9%AB%98%E9%9B%84%E5%B8%AB%E7%AF%84%E5%A4%A7%E5%AD%B8-national-kaohsiung-normal-university/%E8%8A%9D%E5%BF%83%E6%A8%93/504948173174910/">https://www.facebook.com/notes/%E5%9C%8B%E7%AB%8B%E9%AB%98%E9%9B%84%E5%B8%AB%E7%AF%84%E5%A4%A7%E5%AD%B8-national-kaohsiung-normal-university/%E8%8A%9D%E5%BF%83%E6%A8%93/504948173174910/</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">35</td>
+                  <td class="ng-binding">藝文中心</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">20</td>
+                  <td class="ng-binding">20</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href=""></a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">36</td>
+                  <td class="ng-binding">圖書館-活動推播</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">21</td>
+                  <td class="ng-binding">21</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="https://lis.nknu.edu.tw/zh/news_display/81-news1/897-%E3%80%90%E6%B4%BB%E5%8B%95%E8%BD%89%E7%9F%A5%E3%80%91107%E5%B9%B4%E8%87%BA%E7%81%A3%E9%96%B1%E8%AE%80%E7%AF%80">https://lis.nknu.edu.tw/zh/news_display/81-news1/897-%E3%80%90%E6%B4%BB%E5%8B%95%E8%BD%89%E7%9F%A5%E3%80%91107%E5%B9%B4%E8%87%BA%E7%81%A3%E9%96%B1%E8%AE%80%E7%AF%80</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">37</td>
+                  <td class="ng-binding">寰宇大樓</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">22</td>
+                  <td class="ng-binding">22</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="https://www.facebook.com/notes/%E5%9C%8B%E7%AB%8B%E9%AB%98%E9%9B%84%E5%B8%AB%E7%AF%84%E5%A4%A7%E5%AD%B8-national-kaohsiung-normal-university/%E5%AF%B0%E5%AE%87%E5%A4%A7%E6%A8%93/504949406508120/">https://www.facebook.com/notes/%E5%9C%8B%E7%AB%8B%E9%AB%98%E9%9B%84%E5%B8%AB%E7%AF%84%E5%A4%A7%E5%AD%B8-national-kaohsiung-normal-university/%E5%AF%B0%E5%AE%87%E5%A4%A7%E6%A8%93/504949406508120/</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">38</td>
+                  <td class="ng-binding">高斯大樓</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">23</td>
+                  <td class="ng-binding">23</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="https://www.facebook.com/notes/%E5%9C%8B%E7%AB%8B%E9%AB%98%E9%9B%84%E5%B8%AB%E7%AF%84%E5%A4%A7%E5%AD%B8-national-kaohsiung-normal-university/%E9%AB%98%E6%96%AF%E5%A4%A7%E6%A8%93/504950483174679/">https://www.facebook.com/notes/%E5%9C%8B%E7%AB%8B%E9%AB%98%E9%9B%84%E5%B8%AB%E7%AF%84%E5%A4%A7%E5%AD%B8-national-kaohsiung-normal-university/%E9%AB%98%E6%96%AF%E5%A4%A7%E6%A8%93/504950483174679/</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">39</td>
+                  <td class="ng-binding">科技大樓</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">24</td>
+                  <td class="ng-binding">24</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="https://www.facebook.com/notes/%E5%9C%8B%E7%AB%8B%E9%AB%98%E9%9B%84%E5%B8%AB%E7%AF%84%E5%A4%A7%E5%AD%B8-national-kaohsiung-normal-university/%E7%A7%91%E6%8A%80%E5%A4%A7%E6%A8%93/505962936406767/">https://www.facebook.com/notes/%E5%9C%8B%E7%AB%8B%E9%AB%98%E9%9B%84%E5%B8%AB%E7%AF%84%E5%A4%A7%E5%AD%B8-national-kaohsiung-normal-university/%E7%A7%91%E6%8A%80%E5%A4%A7%E6%A8%93/505962936406767/</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">40</td>
+                  <td class="ng-binding">致理大樓</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">25</td>
+                  <td class="ng-binding">25</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="https://www.facebook.com/notes/%E5%9C%8B%E7%AB%8B%E9%AB%98%E9%9B%84%E5%B8%AB%E7%AF%84%E5%A4%A7%E5%AD%B8-national-kaohsiung-normal-university/%E8%87%B4%E7%90%86%E5%A4%A7%E6%A8%93/505963353073392/">https://www.facebook.com/notes/%E5%9C%8B%E7%AB%8B%E9%AB%98%E9%9B%84%E5%B8%AB%E7%AF%84%E5%A4%A7%E5%AD%B8-national-kaohsiung-normal-university/%E8%87%B4%E7%90%86%E5%A4%A7%E6%A8%93/505963353073392/</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">41</td>
+                  <td class="ng-binding">詠絮樓</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">26</td>
+                  <td class="ng-binding">26</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="https://www.facebook.com/notes/%E5%9C%8B%E7%AB%8B%E9%AB%98%E9%9B%84%E5%B8%AB%E7%AF%84%E5%A4%A7%E5%AD%B8-national-kaohsiung-normal-university/%E8%A9%A0%E7%B5%AE%E6%A8%93/505963783073349/">https://www.facebook.com/notes/%E5%9C%8B%E7%AB%8B%E9%AB%98%E9%9B%84%E5%B8%AB%E7%AF%84%E5%A4%A7%E5%AD%B8-national-kaohsiung-normal-university/%E8%A9%A0%E7%B5%AE%E6%A8%93/505963783073349/</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">42</td>
+                  <td class="ng-binding">霽遠樓</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">27</td>
+                  <td class="ng-binding">27</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="https://www.facebook.com/notes/%E5%9C%8B%E7%AB%8B%E9%AB%98%E9%9B%84%E5%B8%AB%E7%AF%84%E5%A4%A7%E5%AD%B8-national-kaohsiung-normal-university/%E9%9C%BD%E9%81%A0%E6%A8%93/505964109739983/">https://www.facebook.com/notes/%E5%9C%8B%E7%AB%8B%E9%AB%98%E9%9B%84%E5%B8%AB%E7%AF%84%E5%A4%A7%E5%AD%B8-national-kaohsiung-normal-university/%E9%9C%BD%E9%81%A0%E6%A8%93/505964109739983/</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">43</td>
+                  <td class="ng-binding">文萃樓</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">28</td>
+                  <td class="ng-binding">28</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="https://www.facebook.com/notes/%E5%9C%8B%E7%AB%8B%E9%AB%98%E9%9B%84%E5%B8%AB%E7%AF%84%E5%A4%A7%E5%AD%B8-national-kaohsiung-normal-university/%E6%96%87%E8%90%83%E6%A8%93/505964313073296/">https://www.facebook.com/notes/%E5%9C%8B%E7%AB%8B%E9%AB%98%E9%9B%84%E5%B8%AB%E7%AF%84%E5%A4%A7%E5%AD%B8-national-kaohsiung-normal-university/%E6%96%87%E8%90%83%E6%A8%93/505964313073296/</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">44</td>
+                  <td class="ng-binding">歸燕食巢</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">29</td>
+                  <td class="ng-binding">29</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="https://www.facebook.com/notes/%E5%9C%8B%E7%AB%8B%E9%AB%98%E9%9B%84%E5%B8%AB%E7%AF%84%E5%A4%A7%E5%AD%B8-national-kaohsiung-normal-university/%E6%AD%B8%E7%87%95%E9%A3%9F%E5%B7%A2/505964629739931/">https://www.facebook.com/notes/%E5%9C%8B%E7%AB%8B%E9%AB%98%E9%9B%84%E5%B8%AB%E7%AF%84%E5%A4%A7%E5%AD%B8-national-kaohsiung-normal-university/%E6%AD%B8%E7%87%95%E9%A3%9F%E5%B7%A2/505964629739931/</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">45</td>
+                  <td class="ng-binding">圖書館-主題書訊</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">30</td>
+                  <td class="ng-binding">30</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="https://lis.nknu.edu.tw/zh/news_display/84-news4">https://lis.nknu.edu.tw/zh/news_display/84-news4</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">46</td>
+                  <td class="ng-binding">生科大樓</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">31</td>
+                  <td class="ng-binding">31</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="https://www.facebook.com/notes/%E5%9C%8B%E7%AB%8B%E9%AB%98%E9%9B%84%E5%B8%AB%E7%AF%84%E5%A4%A7%E5%AD%B8-national-kaohsiung-normal-university/%E7%94%9F%E7%A7%91%E5%A4%A7%E6%A8%93/505964949739899/">https://www.facebook.com/notes/%E5%9C%8B%E7%AB%8B%E9%AB%98%E9%9B%84%E5%B8%AB%E7%AF%84%E5%A4%A7%E5%AD%B8-national-kaohsiung-normal-university/%E7%94%9F%E7%A7%91%E5%A4%A7%E6%A8%93/505964949739899/</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">47</td>
+                  <td class="ng-binding">飛燕蘭亭</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">32</td>
+                  <td class="ng-binding">32</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="https://www.facebook.com/notes/%E5%9C%8B%E7%AB%8B%E9%AB%98%E9%9B%84%E5%B8%AB%E7%AF%84%E5%A4%A7%E5%AD%B8-national-kaohsiung-normal-university/%E9%A3%9B%E7%87%95%E8%98%AD%E4%BA%AD/505967216406339/">https://www.facebook.com/notes/%E5%9C%8B%E7%AB%8B%E9%AB%98%E9%9B%84%E5%B8%AB%E7%AF%84%E5%A4%A7%E5%AD%B8-national-kaohsiung-normal-university/%E9%A3%9B%E7%87%95%E8%98%AD%E4%BA%AD/505967216406339/</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">48</td>
+                  <td class="ng-binding">圖書資訊大樓</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">33</td>
+                  <td class="ng-binding">33</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="https://www.facebook.com/notes/%E5%9C%8B%E7%AB%8B%E9%AB%98%E9%9B%84%E5%B8%AB%E7%AF%84%E5%A4%A7%E5%AD%B8-national-kaohsiung-normal-university/%E5%9C%96%E6%9B%B8%E8%B3%87%E8%A8%8A%E5%A4%A7%E6%A8%93/505968239739570/">https://www.facebook.com/notes/%E5%9C%8B%E7%AB%8B%E9%AB%98%E9%9B%84%E5%B8%AB%E7%AF%84%E5%A4%A7%E5%AD%B8-national-kaohsiung-normal-university/%E5%9C%96%E6%9B%B8%E8%B3%87%E8%A8%8A%E5%A4%A7%E6%A8%93/505968239739570/</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">49</td>
+                  <td class="ng-binding">碧茵湖</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">34</td>
+                  <td class="ng-binding">34</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="https://www.facebook.com/notes/%E5%9C%8B%E7%AB%8B%E9%AB%98%E9%9B%84%E5%B8%AB%E7%AF%84%E5%A4%A7%E5%AD%B8-national-kaohsiung-normal-university/%E7%A2%A7%E8%8C%B5%E6%B9%96/505971186405942/">https://www.facebook.com/notes/%E5%9C%8B%E7%AB%8B%E9%AB%98%E9%9B%84%E5%B8%AB%E7%AF%84%E5%A4%A7%E5%AD%B8-national-kaohsiung-normal-university/%E7%A2%A7%E8%8C%B5%E6%B9%96/505971186405942/</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">50</td>
+                  <td class="ng-binding">幻廉湖</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">35</td>
+                  <td class="ng-binding">35</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="https://www.facebook.com/notes/%E5%9C%8B%E7%AB%8B%E9%AB%98%E9%9B%84%E5%B8%AB%E7%AF%84%E5%A4%A7%E5%AD%B8-national-kaohsiung-normal-university/%E5%B9%BB%E5%BB%89%E6%B9%96/505971873072540/">https://www.facebook.com/notes/%E5%9C%8B%E7%AB%8B%E9%AB%98%E9%9B%84%E5%B8%AB%E7%AF%84%E5%A4%A7%E5%AD%B8-national-kaohsiung-normal-university/%E5%B9%BB%E5%BB%89%E6%B9%96/505971873072540/</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">51</td>
+                  <td class="ng-binding">燕巢校門口</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">36</td>
+                  <td class="ng-binding">36</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="https://www.facebook.com/notes/%E5%9C%8B%E7%AB%8B%E9%AB%98%E9%9B%84%E5%B8%AB%E7%AF%84%E5%A4%A7%E5%AD%B8-national-kaohsiung-normal-university/%E7%87%95%E5%B7%A2%E6%A0%A1%E5%8D%80%E5%A4%A7%E9%96%80/507046216298439/">https://www.facebook.com/notes/%E5%9C%8B%E7%AB%8B%E9%AB%98%E9%9B%84%E5%B8%AB%E7%AF%84%E5%A4%A7%E5%AD%B8-national-kaohsiung-normal-university/%E7%87%95%E5%B7%A2%E6%A0%A1%E5%8D%80%E5%A4%A7%E9%96%80/507046216298439/</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">52</td>
+                  <td class="ng-binding">37</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">37</td>
+                  <td class="ng-binding">37</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="1">1</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">53</td>
+                  <td class="ng-binding">38</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">38</td>
+                  <td class="ng-binding">38</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="1">1</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">54</td>
+                  <td class="ng-binding">39</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">39</td>
+                  <td class="ng-binding">39</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="1">1</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">55</td>
+                  <td class="ng-binding">圖書館-主題書訊</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">40</td>
+                  <td class="ng-binding">40</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="https://lis.nknu.edu.tw/zh/news_display/84-news4">https://lis.nknu.edu.tw/zh/news_display/84-news4</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">56</td>
+                  <td class="ng-binding">41</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">41</td>
+                  <td class="ng-binding">41</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="1">1</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">57</td>
+                  <td class="ng-binding">圖書館-智慧贈書芳名錄</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">42</td>
+                  <td class="ng-binding">42</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="https://lis.nknu.edu.tw/zh/news_display/81-news1/901-20181126_01_thanks">https://lis.nknu.edu.tw/zh/news_display/81-news1/901-20181126_01_thanks</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">58</td>
+                  <td class="ng-binding">43</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">43</td>
+                  <td class="ng-binding">43</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="1">1</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">59</td>
+                  <td class="ng-binding">44</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">44</td>
+                  <td class="ng-binding">44</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="1">1</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">60</td>
+                  <td class="ng-binding">45</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">45</td>
+                  <td class="ng-binding">45</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="1">1</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">62</td>
+                  <td class="ng-binding">行政大樓_2</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">47</td>
+                  <td class="ng-binding">47</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="https://www.facebook.com/notes/%E5%9C%8B%E7%AB%8B%E9%AB%98%E9%9B%84%E5%B8%AB%E7%AF%84%E5%A4%A7%E5%AD%B8-national-kaohsiung-normal-university/%E8%A1%8C%E6%94%BF%E5%A4%A7%E6%A8%93/504883969847997/">https://www.facebook.com/notes/%E5%9C%8B%E7%AB%8B%E9%AB%98%E9%9B%84%E5%B8%AB%E7%AF%84%E5%A4%A7%E5%AD%B8-national-kaohsiung-normal-university/%E8%A1%8C%E6%94%BF%E5%A4%A7%E6%A8%93/504883969847997/</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">63</td>
+                  <td class="ng-binding">行政大樓_3</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">48</td>
+                  <td class="ng-binding">48</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="https://www.facebook.com/notes/%E5%9C%8B%E7%AB%8B%E9%AB%98%E9%9B%84%E5%B8%AB%E7%AF%84%E5%A4%A7%E5%AD%B8-national-kaohsiung-normal-university/%E8%A1%8C%E6%94%BF%E5%A4%A7%E6%A8%93/504883969847997/">https://www.facebook.com/notes/%E5%9C%8B%E7%AB%8B%E9%AB%98%E9%9B%84%E5%B8%AB%E7%AF%84%E5%A4%A7%E5%AD%B8-national-kaohsiung-normal-university/%E8%A1%8C%E6%94%BF%E5%A4%A7%E6%A8%93/504883969847997/</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">64</td>
+                  <td class="ng-binding">行政大樓_4</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">49</td>
+                  <td class="ng-binding">49</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="https://www.facebook.com/notes/%E5%9C%8B%E7%AB%8B%E9%AB%98%E9%9B%84%E5%B8%AB%E7%AF%84%E5%A4%A7%E5%AD%B8-national-kaohsiung-normal-university/%E8%A1%8C%E6%94%BF%E5%A4%A7%E6%A8%93/504883969847997/">https://www.facebook.com/notes/%E5%9C%8B%E7%AB%8B%E9%AB%98%E9%9B%84%E5%B8%AB%E7%AF%84%E5%A4%A7%E5%AD%B8-national-kaohsiung-normal-university/%E8%A1%8C%E6%94%BF%E5%A4%A7%E6%A8%93/504883969847997/</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">65</td>
+                  <td class="ng-binding">50</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">50</td>
+                  <td class="ng-binding">50</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="1">1</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">66</td>
+                  <td class="ng-binding">51</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">51</td>
+                  <td class="ng-binding">51</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="1">1</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">67</td>
+                  <td class="ng-binding">52</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">52</td>
+                  <td class="ng-binding">52</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="1">1</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">68</td>
+                  <td class="ng-binding">53</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">53</td>
+                  <td class="ng-binding">53</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="1">1</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">69</td>
+                  <td class="ng-binding">54</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">54</td>
+                  <td class="ng-binding">54</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="1">1</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">70</td>
+                  <td class="ng-binding">55</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">55</td>
+                  <td class="ng-binding">55</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="1">1</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">71</td>
+                  <td class="ng-binding">56</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">56</td>
+                  <td class="ng-binding">56</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="1">1</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">72</td>
+                  <td class="ng-binding">57</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">57</td>
+                  <td class="ng-binding">57</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="1">1</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">73</td>
+                  <td class="ng-binding">58</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">58</td>
+                  <td class="ng-binding">58</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="1">1</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">74</td>
+                  <td class="ng-binding">59</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">59</td>
+                  <td class="ng-binding">59</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="1">1</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">75</td>
+                  <td class="ng-binding">60</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">60</td>
+                  <td class="ng-binding">60</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="1">1</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">76</td>
+                  <td class="ng-binding">61</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">61</td>
+                  <td class="ng-binding">61</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="1">1</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">77</td>
+                  <td class="ng-binding">62</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">62</td>
+                  <td class="ng-binding">62</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="1">1</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">78</td>
+                  <td class="ng-binding">63</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">63</td>
+                  <td class="ng-binding">63</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="1">1</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">79</td>
+                  <td class="ng-binding">64</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">64</td>
+                  <td class="ng-binding">64</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="1">1</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">80</td>
+                  <td class="ng-binding">65</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">65</td>
+                  <td class="ng-binding">65</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="1">1</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">81</td>
+                  <td class="ng-binding">66</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">66</td>
+                  <td class="ng-binding">66</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="1">1</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">82</td>
+                  <td class="ng-binding">67</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">67</td>
+                  <td class="ng-binding">67</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="1">1</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">83</td>
+                  <td class="ng-binding">68</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">68</td>
+                  <td class="ng-binding">68</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="1">1</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">84</td>
+                  <td class="ng-binding">69</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">69</td>
+                  <td class="ng-binding">69</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="1">1</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">85</td>
+                  <td class="ng-binding">70</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">70</td>
+                  <td class="ng-binding">70</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="1">1</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">86</td>
+                  <td class="ng-binding">71</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">71</td>
+                  <td class="ng-binding">71</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="1">1</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">87</td>
+                  <td class="ng-binding">72</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">72</td>
+                  <td class="ng-binding">72</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="1">1</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">88</td>
+                  <td class="ng-binding">73</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">73</td>
+                  <td class="ng-binding">73</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="1">1</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">89</td>
+                  <td class="ng-binding">74</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">74</td>
+                  <td class="ng-binding">74</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="1">1</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">90</td>
+                  <td class="ng-binding">75</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">75</td>
+                  <td class="ng-binding">75</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="1">1</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">91</td>
+                  <td class="ng-binding">76</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">76</td>
+                  <td class="ng-binding">76</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="1">1</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">92</td>
+                  <td class="ng-binding"></td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">77</td>
+                  <td class="ng-binding">77</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="1">1</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">93</td>
+                  <td class="ng-binding">78</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">78</td>
+                  <td class="ng-binding">78</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="1">1</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">94</td>
+                  <td class="ng-binding">79</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">79</td>
+                  <td class="ng-binding">79</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="1">1</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">95</td>
+                  <td class="ng-binding">80</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">80</td>
+                  <td class="ng-binding">80</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="1">1</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">96</td>
+                  <td class="ng-binding">81</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">81</td>
+                  <td class="ng-binding">81</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="1">1</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">97</td>
+                  <td class="ng-binding">82</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">82</td>
+                  <td class="ng-binding">82</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="1">1</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">98</td>
+                  <td class="ng-binding">83</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">83</td>
+                  <td class="ng-binding">83</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="1">1</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">99</td>
+                  <td class="ng-binding">84</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">84</td>
+                  <td class="ng-binding">84</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="1">1</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">100</td>
+                  <td class="ng-binding">85</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">85</td>
+                  <td class="ng-binding">85</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="1">1</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">101</td>
+                  <td class="ng-binding">86</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">86</td>
+                  <td class="ng-binding">86</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="1">1</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">102</td>
+                  <td class="ng-binding">87</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">87</td>
+                  <td class="ng-binding">87</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="1">1</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">103</td>
+                  <td class="ng-binding">88</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">88</td>
+                  <td class="ng-binding">88</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="1">1</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">104</td>
+                  <td class="ng-binding">89</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">89</td>
+                  <td class="ng-binding">89</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="1">1</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">105</td>
+                  <td class="ng-binding">90</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">90</td>
+                  <td class="ng-binding">90</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="1">1</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">106</td>
+                  <td class="ng-binding">91</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">91</td>
+                  <td class="ng-binding">91</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="1">1</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">107</td>
+                  <td class="ng-binding">92</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">92</td>
+                  <td class="ng-binding">92</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="1">1</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">108</td>
+                  <td class="ng-binding">93</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">93</td>
+                  <td class="ng-binding">93</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="1">1</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">109</td>
+                  <td class="ng-binding">94</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">94</td>
+                  <td class="ng-binding">94</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="1">1</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">110</td>
+                  <td class="ng-binding">95</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">95</td>
+                  <td class="ng-binding">95</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="1">1</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">111</td>
+                  <td class="ng-binding">96</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">96</td>
+                  <td class="ng-binding">96</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="1">1</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">112</td>
+                  <td class="ng-binding">97</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">97</td>
+                  <td class="ng-binding">97</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="1">1</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">113</td>
+                  <td class="ng-binding">98</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">98</td>
+                  <td class="ng-binding">98</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="1">1</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">114</td>
+                  <td class="ng-binding">99</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">99</td>
+                  <td class="ng-binding">99</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="1">1</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">115</td>
+                  <td class="ng-binding">100</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">100</td>
+                  <td class="ng-binding">100</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="1">1</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+                <tr class="ng-scope">
+                  <td class="ng-binding">116</td>
+                  <td class="ng-binding">測試</td>
+                  <td class="ng-binding">7E6D6647-652C-4022-AD48-548000B786AD</td>
+                  <td class="ng-binding">46</td>
+                  <td class="ng-binding">46</td>
+                  <td class="AutoNewline">
+                    <a class="ng-binding" href="https://lis.nknu.edu.tw/zh/research-resources/twiug-2018">https://lis.nknu.edu.tw/zh/research-resources/twiug-2018</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">修改</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="javascript:void(0);">刪除</a>
+                  </td>
+                </tr><!-- end ngRepeat: beacon in beacons | orderBy:'beacon.Beacon_ID' -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div><!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js">
+  </script> 
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js">
+  </script> 
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js">
+  </script> 
+  <script src="https://getbootstrap.com/docs/4.5/examples/dashboard/dashboard.js">
+  </script> <!-- Load d3.js and c3.js -->
+   
+  <script charset="utf-8" src="https://c3js.org/js/d3-5.8.2.min-c5268e33.js">
+  </script> 
+  <script src="https://c3js.org/js/c3.min-bc946ede.js">
+  </script> 
+  <script type="text/javascript">
+  var chart = c3.generate({
+   bindto: '#chart',
+   data: {
+     columns: [
+       ['data1', 30, 200, 110, 400, 150, 250],
+       ['data2', 50, 20, 10, 40, 15, 25],
+       ['data3', 30, 200, 120, 400, 150, 250],
+       ['data4', 50, 30, 10, 40, 15, 25],
+       ['data5', 30, 200, 130, 400, 150, 250],
+       ['data6', 50, 40, 10, 40, 15, 25],
+       ['data7', 30, 200, 140, 400, 150, 250],
+       ['data8', 50, 50, 10, 40, 15, 25],
+       ['data9', 30, 200, 150, 400, 150, 250],
+       ['data10', 50, 60, 10, 40, 15, 25],
+       ['data11', 30, 200, 160, 400, 150, 250],
+       ['data12', 50, 70, 10, 40, 15, 25],
+     ]
+   }
+  });
+  var chart = c3.generate({
+   bindto: '#chart2',
+   data: {
+       // iris data from R
+       columns: [
+           ['data1', 30],
+           ['data2', 120],
+           ['data3', 30],
+           ['data4', 120],
+           ['data5', 30],
+           ['data6', 120],
+           ['data7', 30],
+           ['data8', 120],
+       ],
+       type : 'pie',
+       onclick: function (d, i) { console.log("onclick", d, i); },
+       onmouseover: function (d, i) { console.log("onmouseover", d, i); },
+       onmouseout: function (d, i) { console.log("onmouseout", d, i); }
+   }
+  });
+  var chart = c3.generate({
+   bindto: '#chart3',
+   data: {
+       columns: [
+           ['data1', 300, 350, 300, 0, 0, 100],
+           ['data2', 130, 100, 140, 200, 150, 50]
+       ],
+       types: {
+           data1: 'step',
+           data2: 'area-step'
+       }
+   }
+  });
+  var chart = c3.generate({
+   bindto: '#chart4',
+   data: {
+       columns: [
+           ['data1', 30, 200, 100, 400, 150, 250],
+           ['data2', 130, 100, 140, 200, 150, 50]
+       ],
+       type: 'bar'
+   },
+   bar: {
+       width: {
+           ratio: 0.5 // this makes bar width 50% of length between ticks
+       }
+       // or
+       //width: 100 // this makes bar width 100px
+   }
+  });
+  </script>
+</body>
+</html>

@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
+    <!-- Load c3.css -->
+    <link href="https://c3js.org/css/c3-eb4b9be8.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/4.5/examples/dashboard/dashboard.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
+
+
+    <title>桃園市立圖書館</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+      <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3 text-center" href="#">智慧物聯網雲端圖書平台</a>
+      <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <input class="form-control form-control-dark" type="text" placeholder="搜尋" aria-label="Search">
+      <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+          <a class="nav-link" href="#">登出</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="container-fluid">
+      <div class="row my-3">
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse h4">
+          <div class="sidebar-sticky pt-3">
+            <ul class="nav flex-column">
+              <li class="nav-item ">
+                <a class="nav-link" href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                  首頁 <span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                  智慧學習
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>
+                  智慧社群
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                  智慧行政
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active " href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                  智慧管理
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+          <div class="container-fluid">
+            <h1>節能座位子系統：預約管理</h1>
+            <div class="row">
+              <div class="col-8 mt-3 h5">
+                <div class="card">
+                  <div class="card-body">
+
+  <section class="bg-light">
+    <div class="container" style="margin-top:20px">
+      <div class="row">
+        <div class="col-12">
+          <div class="form-group row">
+            <label class="col-form-label col-2">從</label>
+            <div class="col-3">
+              <select class="form-control">
+                <option selected>
+                  A5
+                </option>
+              </select>
+            </div><label class="col-form-label col-2">換到</label>
+            <div class="col-3">
+              <select class="form-control">
+                <option selected>
+                  A6
+                </option>
+              </select>
+            </div>
+            <div class="col-2">
+              <button class="btn btn-secondary">確認</button>
+            </div>
+          </div>
+          <div class="btn-group">
+            <button aria-expanded="false" aria-haspopup="true" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" id="area" type="button">自習室</button>
+            <div class="dropdown-menu" id="areaSelect" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 38px, 0px);">
+              <a class="dropdown-item" data-value="1">自習室</a> <a class="dropdown-item" data-value="2">大廳</a>
+              <div class="dropdown-divider"></div><a class="dropdown-item" data-value="3">二樓</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <button class="btn btn-info" type="button">#</button><small>使用中</small> <button class="btn btn-danger" type="button">✘</button><small>已被預約</small> <button class="btn btn-success" type="button">✔</button><small>可被預約</small>
+        </div>
+      </div>
+      <div class="card">
+        <div class="row">
+          <div class="col-12 overflow-auto">
+            <table class="table table-borderless text-center">
+              <thead>
+                <tr>
+                  <th>時間</th>
+                  <th>日</th>
+                  <th>一</th>
+                  <th>二</th>
+                  <th>三</th>
+                  <th>四</th>
+                  <th>五</th>
+                  <th>六</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>09:00~09:30</th>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="0">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-danger disabled" data-toggle="button" type="button" value="1">✘</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-info" data-target="#reservedOpen" data-toggle="modal" type="button" value="2">#</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="3">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="4">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="5">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="6">✔</button></td>
+                </tr>
+                <tr>
+                  <th>09:30~10:00</th>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="7">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="8">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="9">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="10">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="11">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="12">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="13">✔</button></td>
+                </tr>
+                <tr>
+                  <th>10:00~10:30</th>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="14">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="15">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="16">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="17">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-danger disabled" data-toggle="button" type="button" value="18">✘</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="19">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="20">✔</button></td>
+                </tr>
+                <tr>
+                  <th>10:30~11:00</th>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="21">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-info" data-target="#reservedOpen" data-toggle="modal" type="button" value="22">#</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="23">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-info" data-target="#reservedOpen" data-toggle="modal" type="button" value="24">#</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="25">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="26">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="27">✔</button></td>
+                </tr>
+                <tr>
+                  <th>11:00~11:30</th>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="28">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="29">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="30">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="31">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="32">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="33">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="34">✔</button></td>
+                </tr>
+                <tr>
+                  <th>11:30~12:00</th>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="35">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="36">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="37">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="38">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="39">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="40">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="41">✔</button></td>
+                </tr>
+                <tr>
+                  <th>12:00~12:30</th>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="42">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="43">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="44">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="45">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="46">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="47">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="48">✔</button></td>
+                </tr>
+                <tr>
+                  <th>12:30~13:00</th>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="49">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="50">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="51">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="52">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="53">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="54">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="55">✔</button></td>
+                </tr>
+                <tr>
+                  <th>13:00~13:30</th>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="56">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="57">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="58">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="59">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="60">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="61">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="62">✔</button></td>
+                </tr>
+                <tr>
+                  <th>13:30~14:00</th>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="63">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="64">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="65">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="66">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="67">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="68">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="69">✔</button></td>
+                </tr>
+                <tr>
+                  <th>14:00~14:30</th>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="70">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="71">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="72">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="73">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="74">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="75">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="76">✔</button></td>
+                </tr>
+                <tr>
+                  <th>14:30~15:00</th>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="77">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="78">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="79">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="80">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="81">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="82">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="83">✔</button></td>
+                </tr>
+                <tr>
+                  <th>15:00~15:30</th>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="84">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="85">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="86">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="87">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="88">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="89">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="90">✔</button></td>
+                </tr>
+                <tr>
+                  <th>15:30~16:00</th>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="91">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="92">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="93">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="94">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="95">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="96">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="97">✔</button></td>
+                </tr>
+                <tr>
+                  <th>16:00~16:30</th>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="98">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="99">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="100">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="101">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="102">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="103">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="104">✔</button></td>
+                </tr>
+                <tr>
+                  <th>17:30~17:00</th>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="105">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="106">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="107">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="108">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="109">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="110">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-danger disabled" data-toggle="button" type="button" value="111">✘</button></td>
+                </tr>
+                <tr>
+                  <th>17:00~17:30</th>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="112">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="113">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="114">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="115">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="116">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="117">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="118">✔</button></td>
+                </tr>
+                <tr>
+                  <th>17:30~18:00</th>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="119">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="120">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="121">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="122">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="123">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="124">✔</button></td>
+                  <td class="table-secondary"><button aria-pressed="false" class="btn btn-success" data-toggle="button" type="button" value="125">✔</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+                  </div>
+                </div>
+              </div>
+              <div class="col-4 mt-3 h5">
+                <div class="card">
+                  <div class="card-body">
+                    <h4>監視系統即時畫面</h4>
+                    <div class="card overflow-auto">
+                      <div class="card-body" >
+                        <div id="ctl00_phMain_uImage">
+                          <div class="hideme" style="float:left;">
+                            <legend>和平圖書館</legend>
+                            <img id="ctl00_phMain_img0" src="https://lis.nknu.edu.tw/images/filedata/su_picture/LISweb/1090522-3.jpg" >
+                            <legend>燕巢圖書館</legend>
+                            <img id="ctl00_phMain_img0" src="https://lis.nknu.edu.tw/images/filedata/su_picture/LISweb/1090522-3.jpg">
+                            <legend>自習室</legend>
+                            <img id="ctl00_phMain_img0" src="https://lis.nknu.edu.tw/images/filedata/su_picture/LISweb/1090522-3.jpg">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="basicModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">多元推廣設定</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group row">
+                <label for="colFormLabel" class="col-sm-2 col-form-label">標題</label>
+                <div class="col-sm-10">
+                  <input type="email" class="form-control" id="colFormLabel" placeholder="ex.[詢問]真的好玩嗎？">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="colFormLabel" class="col-sm-2 col-form-label">分類</label>
+                <div class="col-sm-10">
+                  <select class="form-control" id="colFormLabel" placeholder="ex.21">
+                    <option selected="">請選擇</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group row" style="height: 50vh">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">新增</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <div class="toast alert alert-danger fade hide" data-autohide="false" style="position: absolute; top: 20vh; right: 1vw;">
+    <div class="toast-header">
+      <svg class=" rounded mr-2" width="20" height="20" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+                    <rect fill="#FF0000" width="100%" height="100%" /></svg>
+      <strong class="mr-auto h4">系統警示</strong>
+      <small class="text-muted h5">11秒鐘前</small>
+      <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+    </div>
+    <div class="toast-body h5">
+      環控系統。空調事件1
+    </div>
+  </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://getbootstrap.com/docs/4.5/examples/dashboard/dashboard.js"></script>
+    <!-- Load d3.js and c3.js -->
+    <script src="https://c3js.org/js/d3-5.8.2.min-c5268e33.js" charset="utf-8"></script>
+    <script src="https://c3js.org/js/c3.min-bc946ede.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
+  </body>
+</html>
+<script type="text/javascript">
+
+  $('table1').DataTable({
+    "language": {
+      "processing":   "處理中...",
+      "loadingRecords": "載入中...",
+      "lengthMenu":   "顯示 _MENU_ 項結果",
+      "zeroRecords":  "沒有符合的結果",
+      "info":         "顯示第 _START_ 至 _END_ 項結果，共 _TOTAL_ 項",
+      "infoEmpty":    "顯示第 0 至 0 項結果，共 0 項",
+      "infoFiltered": "(從 _MAX_ 項結果中過濾)",
+      "infoPostFix":  "",
+      "search":       "搜尋:",
+      "paginate": {
+          "first":    "第一頁",
+          "previous": "上一頁",
+          "next":     "下一頁",
+          "last":     "最後一頁"
+      },
+      "aria": {
+          "sortAscending":  ": 升冪排列",
+          "sortDescending": ": 降冪排列"
+      }
+    }
+  });
+
+var chart = c3.generate({
+  bindto: '#chart',
+  data: {
+    columns: [
+      ['data1', 30, 200, 110, 400, 150, 250],
+      ['data2', 50, 20, 10, 40, 15, 25],
+    ]
+  }
+});
+var chart = c3.generate({
+  bindto: '#chart2',
+  data: {
+      // iris data from R
+      columns: [
+          ['data1', 30],
+          ['data2', 120],
+          ['data3', 30],
+          ['data4', 120],
+          ['data5', 30],
+          ['data6', 120],
+          ['data7', 30],
+          ['data8', 120],
+      ],
+      type : 'pie',
+      onclick: function (d, i) { console.log("onclick", d, i); },
+      onmouseover: function (d, i) { console.log("onmouseover", d, i); },
+      onmouseout: function (d, i) { console.log("onmouseout", d, i); }
+  }
+});
+var chart = c3.generate({
+  bindto: '#chart3',
+  data: {
+      columns: [
+          ['data1', 300, 350, 300, 0, 0, 100],
+          ['data2', 130, 100, 140, 200, 150, 50]
+      ],
+      types: {
+          data1: 'step',
+          data2: 'area-step'
+      }
+  }
+});
+var chart = c3.generate({
+  bindto: '#chart4',
+  data: {
+      columns: [
+          ['data1', 30, 200, 100, 400, 150, 250],
+          ['data2', 130, 100, 140, 200, 150, 50]
+      ],
+      type: 'bar'
+  },
+  bar: {
+      width: {
+          ratio: 0.5 // this makes bar width 50% of length between ticks
+      }
+      // or
+      //width: 100 // this makes bar width 100px
+  }
+});
+var chart = c3.generate({
+  bindto: '#chart7',
+  data: {
+      columns: [
+          ['使用中', 300, 350, 300, 0, 0, 0],
+          ['已預約', 130, 100, 140, 200, 150, 50]
+      ],
+      types: {
+          使用中: 'area',
+          已預約: 'area-spline'
+      }
+  }
+});
+var chart = c3.generate({
+  bindto: '#chart8',
+  data: {
+      columns: [
+          ['data1', -30, 200, 200, 400, -150, 250],
+          ['data2', 130, 100, -100, 200, -150, 50],
+          ['data3', -230, 200, 200, -300, 250, 250]
+      ],
+      type: 'bar',
+      groups: [
+          ['data1', 'data2']
+      ]
+  },
+  grid: {
+      y: {
+          lines: [{value:0}]
+      }
+  }
+});
+</script>

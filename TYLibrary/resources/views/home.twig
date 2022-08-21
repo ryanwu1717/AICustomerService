@@ -1,0 +1,246 @@
+{% extends "partical/header.twig" %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+
+<style type="text/css">
+  .scroll-to-down {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    display: none;
+    width: 2.75rem;
+    height: 2.75rem;
+    text-align: center;
+    color: #fff;
+    background: rgba(90, 92, 105, 0.5);
+    line-height: 46px;
+  }
+
+  .scroll-to-down:focus,
+  .scroll-to-down:hover {
+    color: white;
+  }
+
+  .scroll-to-down:hover {
+    background: #5a5c69;
+  }
+
+  .scroll-to-down i {
+    font-weight: 800;
+  }
+
+  .circleBase {
+    border-radius: 50%;
+    behavior: url(PIE.htc);
+    /* remove if you don't care about IE8 */
+  }
+
+  .type2 {
+    width: 25px;
+    height: 25px;
+    background: #ccc;
+    border: 3px solid #000;
+  }
+</style>
+
+dddddd
+<h3 class=" text-center"></h3>
+<!-- <div class="card"> -->
+<!-- <div class="card-body"> -->
+<div class="row">
+  <!-- <div class="col-lg-4 ">
+    <div class="card" style="height:90vh">
+      <div class="card-header" style="background:#FFE153;">
+        <div class="row">
+          <div class="col-6">
+            <h4>聊天室列表</h4>
+          </div>
+          <div class="col-6">
+            <div class="btn-group float-right">
+              <button class="btn btn-secondary fa fa-folder" type="button" data-toggle="modal" data-target="#basicModal" data-type="addClass"></button>
+              <button class="btn btn-secondary " type="button" data-toggle="modal" data-target="#basicModal" data-type="create">+</button>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i></span>
+          </div>
+          <input type="text" id="searchChatroomInput" class="form-control">
+        </div>
+      </div>
+      <div class="card-body overflow-auto" name="inbox_chat" style="background:#FFED97;">
+      </div>
+    </div>
+  </div> -->
+  <div class="col-lg-12">
+    <div class="card" style="height:90vh">
+      <div class="card-header">
+        <nav class="navbar navbar-expand navbar-light bg-light d-flex justify-content-between">
+          <a class="navbar-brand" name="navbarChatroomTitle"></a>
+          <div class="btn-group">
+            <button type="button" class="btn btn-light dropdown-toggle text-dark bg-light" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false" id="tool_dropdown" style="display:none;">
+            </button>
+            <div class="dropdown-menu dropdown-menu-right">
+              <button class="dropdown-item" type="button-light" data-toggle="modal" data-target="#basicModal" data-type="member">成員列表</button>
+              <div class="dropdown-divider"></div>
+              <button class="dropdown-item" type="button" data-toggle="modal" data-target="#basicModal" data-type="insertClass">加入議題類別</button>
+              <div class="dropdown-divider"></div>
+              <button class="dropdown-item" type="button" data-toggle="modal" data-target="#basicModal" data-type="delete">離開議題77</button>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <div class="card-body overflow-auto msg_history">
+        <div class="h-100 d-flex flex-column">
+          <div class="card flex-grow-1 mb-3">
+            <div class="card-body" name="chatBox">
+            </div>
+          </div>
+         <!--  <div class="row">
+          
+              <div class="btn-group dropup col-lg-6">
+               
+                <button class="btn btn-secondary dropdown-toggle btn-block" type="button" id="dropdownAI" data-type="ask" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                提問
+                </button>
+                <div class="dropdown-menu overflow-auto" aria-labelledby="dropdownAI" name="dropdownAI" style="width:150vh;height:30vh;left: 50% !important;right: auto !important;text-align: center !important;transform: translate(-50%, 0) !important;">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+                 
+            </div>
+            <div class="btn-group dropup col-lg-6">
+              <button class="btn btn-secondary dropdown-toggle btn-block" type="button" id="dropdownAI" data-type="more" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    更多相關書籍
+              </button>
+              <div class="dropdown-menu overflow-auto " aria-labelledby="dropdownAI" name="dropdownAI" style="width:50vh;height:30vh">
+
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </div>
+          </div> -->
+           
+           
+  
+           
+          </div> 
+        </div>
+
+      </div>
+     
+      <div class="card-footer">
+        
+        <div class="align-bottom">
+          <div class="dropup" id="dropupTag">
+            <div class="dropdown-menu show" aria-labelledby="dropdownMenuButton" id="tagPeople">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </div>
+          
+          <div class="d-flex">
+            <a class="scroll-to-down rounded">
+              <i class="fas fa-angle-down"></i>
+            </a>
+
+
+            <div class="flex-shrink-1  align-self-center ml-1">
+              <button class="btn btn-info btn-block far fa-file" type="button" onclick="uploadFile(this)"></button>
+            </div>
+            <!-- <div class="w-10">
+              <textarea class="form-control" style="word-wrap:break-word;width:100%;" placeholder="請在此輸入訊息，ENTER可以換行&#13;&#10;SHIFT+ENTER送出訊息" id="textinput"></textarea>
+            </div> -->
+
+            <div class="w-100 ml-1">
+              <textarea class="form-control" style="word-wrap:break-word;width:100%;" placeholder="請在此輸入訊息，ENTER可以換行&#13;&#10;SHIFT+ENTER送出訊息" id="textinput"></textarea>
+            </div>
+
+            <input style="display:none;" type="file" name="inputFile">
+            <!-- <div class="btn-group dropup">
+              <div class="flex-shrink-1  align-self-center ml-1">
+                <button type="button" class="btn btn-secondary btn-block far fa-smile " aria-haspopup="true" aria-expanded="false" id="btnEmoji">
+                </button>
+              </div>
+              <div class="dropdown-menu overflow-auto" aria-labelledby="dropdownMenuEmoji" id="dropdownMenuEmoji" style="display:none;height:25vh">
+                <div class="btn-group" role="group" aria-label="Basic example">
+                  <button type="button" name="emojiPic" class="btn badge badge-light ml-1-">&#128512;</button>
+                  <button type="button" name="emojiPic" class="btn badge badge-light ml-1-">&#128513;</button>
+                  <button type="button" name="emojiPic" class="btn badge badge-light ml-1-">&#128514;</button>
+                </div>
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </div> -->
+
+
+            <div class="flex-shrink-1  align-self-center ml-1">
+              <button class="btn btn-info btn-block far fa-arrow-alt-circle-right msg_send_btn" name="ButtonMsgSend" type="button"></button>
+            </div>
+            <!-- <div class="flex-shrink-1  align-self-center ml-1">
+              <button class="btn btn-secondary " type="button" onclick="uploadFile(this)">+</button>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- </div> -->
+<!-- </div> -->
+</div>
+<!-- Basic Modal-->
+<div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Ready to Leave?</h5>
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" type="button" data-dismiss="modal">關閉</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- double Modal-->
+<div class="modal fade" id="newModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <script type="text/javascript" src="../resources/assets/js/home.js"></script> -->
+
+
+
+
+
+{% endblock %}
+{% block js %}
+<script src="{{ asset("home.js") }}"></script>
+{% endblock %}

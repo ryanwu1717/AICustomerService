@@ -1,0 +1,987 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- Load c3.css -->
+    <link href="https://c3js.org/css/c3-eb4b9be8.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
+    <link href="https://getbootstrap.com/docs/4.5/examples/dashboard/dashboard.css" rel="stylesheet">
+    <title>桃園市立圖書館</title>
+  </head>
+  <body style="font-family:Microsoft JhengHei;">
+    <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+      <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3 text-center" href="#">智慧物聯網雲端圖書平台</a>
+      <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <input class="form-control form-control-dark" type="text" placeholder="搜尋" aria-label="Search">
+      <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+          <a class="nav-link" href="#">登出</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="container-fluid">
+      <div class="row my-3">
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+          <div class="sidebar-sticky pt-3">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link active" href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                  首頁 <span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                  智慧學習
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>
+                  智慧社群
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                  智慧管理
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                  智慧行政
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-xs-12 col-lg-6 mt-1">
+                <div class="card alert-danger">
+                  <div class="row no-gutters">
+                    <div class="col-4 d-flex">
+                      <img class="card-img align-self-center" src="https://pic.90sjimg.com/design/00/00/84/17/58df0812401f3.png" />
+                    </div>
+                    <div class="col-8">
+                      <div class="card-body h3">
+                        <div class="card-title">
+                          介紹給我
+                        </div>
+                        <div class="card-text">
+                          智慧學習
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-12 col-lg-6 mt-1">
+                <div class="card alert-info">
+                  <div class="row no-gutters">
+                    <div class="col-4 d-flex">
+                      <img class="card-img align-self-center" src="https://pic.90sjimg.com/design/00/00/84/17/58df0812401f3.png" />
+                    </div>
+                    <div class="col-8">
+                      <div class="card-body h3">
+                        <div class="card-title">
+                          推薦給我
+                        </div>
+                        <div class="card-text">
+                          智慧學習
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-12 col-lg-6 mt-1">
+                <div class="card alert-danger">
+                  <div class="row no-gutters">
+                    <div class="col-4 d-flex">
+                      <img class="card-img align-self-center" src="https://pic.90sjimg.com/design/00/00/84/17/58df0812401f3.png" />
+                    </div>
+                    <div class="col-8">
+                      <div class="card-body h3">
+                        <div class="card-title">
+                          全部給我
+                        </div>
+                        <div class="card-text">
+                          智慧學習
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-12 col-lg-6 mt-1">
+                <div class="card alert-info">
+                  <div class="row no-gutters">
+                    <div class="col-4 d-flex">
+                      <img class="card-img align-self-center" src="https://pic.90sjimg.com/design/00/00/84/17/58df0812401f3.png" />
+                    </div>
+                    <div class="col-8">
+                      <div class="card-body h3">
+                        <div class="card-title">
+                          我自己選
+                        </div>
+                        <div class="card-text">
+                          智慧學習
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-12 col-lg-6 mt-1">
+                <div class="card bg-success">
+                  <div class="row no-gutters">
+                    <div class="col-4 d-flex">
+                      <img class="card-img align-self-center" src="https://pic.90sjimg.com/design/00/00/84/17/58df0812401f3.png" />
+                    </div>
+                    <div class="col-8">
+                      <div class="card-body h3">
+                        <div class="card-title">
+                          第一格
+                        </div>
+                        <div class="card-text">
+                          內容
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-12 col-lg-6 mt-1">
+                <div class="card bg-secondary">
+                  <div class="row no-gutters">
+                    <div class="col-4 d-flex">
+                      <img class="card-img align-self-center" src="https://pic.90sjimg.com/design/00/00/84/17/58df0812401f3.png" />
+                    </div>
+                    <div class="col-8">
+                      <div class="card-body h3">
+                        <div class="card-title">
+                          第一格
+                        </div>
+                        <div class="card-text">
+                          內容
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-12 col-lg-6 mt-1">
+                <div class="card bg-success">
+                  <div class="row no-gutters">
+                    <div class="col-4 d-flex">
+                      <img class="card-img align-self-center" src="https://pic.90sjimg.com/design/00/00/84/17/58df0812401f3.png" />
+                    </div>
+                    <div class="col-8">
+                      <div class="card-body h3">
+                        <div class="card-title">
+                          第一格
+                        </div>
+                        <div class="card-text">
+                          內容
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="borrowModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">借閱書單</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <table class="table table-striped table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                      <label class="form-check-label">全選</label>
+                    </div>
+                  </th>
+                  <th scope="col">#</th>
+                  <th scope="col">書名</th>
+                  <th scope="col">封面</th>
+                </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                  </div>
+                </td>
+                <th scope="row">1</th>
+                <td>今古奇觀(五) : 移花接木</td>
+                <td>
+                  <img src="https://f.ecimg.tw/items/DJAA2VA900AOB22/000002_1590113727.jpg" style="height: 150px">
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                  </div>
+                </td>
+                <th scope="row">2</th>
+                <td>殯葬衛生</td>
+                <td>
+                  <img src="https://f.ecimg.tw/items/DJAA2VA900AOB22/000002_1590113727.jpg" style="height: 150px">
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                  </div>
+                </td>
+                <th scope="row">3</th>
+                <td>蘆洲受玄宮廟口開講 : 幽冥.日常學術講座</td>
+                <td>
+                  <img src="https://f.ecimg.tw/items/DJAA2VA900AOB22/000002_1590113727.jpg" style="height: 150px">
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">代還書</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="borrowFModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">借閱書單</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            已代理 王大明 歸還書本：XXXXXXXXXX書。
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="borrowNModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">通知</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group row">
+              <label class="col-2 col-form-label">範本</label>
+              <div class="col-10">
+                <select class="form-control">
+                  <option selected="">還書通知</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-2 col-form-label">姓名</label>
+              <div class="col-10">
+                <input type="text" name="" class="form-control" disabled value="王大明">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-2 col-form-label">內容</label>
+              <div class="col-10">
+               <textarea class="form-control" placeholder="您借閱的書籍已到期！" value="您借閱的書籍已到期！"></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">送出</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="borrowNFModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">通知</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            已送出通知給 王大明 。
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="replyModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">回覆</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group row">
+              <label class="col-2 col-form-label">範本</label>
+              <div class="col-10">
+                <select class="form-control">
+                  <option selected="">基本回覆</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="exampleInputEmail1" class="h4 col-form-label col-2">問題</label>
+              <div class="col-10">
+                <input type="text" class="form-control" name="" value="借書出現條碼不明" disabled>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="exampleInputEmail1" class="h4 col-form-label col-2">回覆內容</label>
+              <div class="col-10">
+                <textarea class="form-control" placeholder="" value="">
+您好！
+您的問題可以參考以下網址：https://www.typl.gov.tw
+                </textarea>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">送出</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="replyFModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">回覆</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            已回覆問題給 王大明 。
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="pushModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">新增推播</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group row">
+                <label for="colFormLabel" class="col-sm-2 col-form-label">標題</label>
+                <div class="col-sm-10">
+                  <input type="email" class="form-control" id="colFormLabel" value="[消息]今天有大師演講喔！">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="colFormLabel" class="col-sm-2 col-form-label">內容</label>
+                <div class="col-sm-10">
+                  <input type="email" class="form-control" id="colFormLabel" placeholder="歡迎各位讀者參與！">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="colFormLabel" class="col-sm-2 col-form-label">推播位置</label>
+                <div class="col-sm-10">
+                  <select class="form-control" id="colFormLabel" placeholder="ex.21">
+                    <option selected="">請選擇</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="colFormLabel" class="col-sm-2 col-form-label">誰能看到</label>
+                <div class="col-sm-10">
+                  <select class="form-control" id="colFormLabel" placeholder="ex.21">
+                    <option selected="">請選擇</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="colFormLabel" class="col-sm-2 col-form-label">起時間</label>
+                <div class="col-sm-4">
+                  <input type="time" class="form-control" id="colFormLabel" placeholder="ex.這個區域到底好不好">
+                </div>
+                <label for="colFormLabel" class="col-sm-2 col-form-label">訖時間</label>
+                <div class="col-sm-4">
+                  <input type="time" class="form-control" id="colFormLabel" placeholder="ex.這個區域到底好不好">
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">新增</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="pushFModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">新增推播</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            已新增推播訊息 。
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="RFIDModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">RFID閘門警示</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group row">
+                <label for="colFormLabel" class="col-sm-2 col-form-label">書籍</label>
+                <div class="col-sm-10">
+                  <input type="email" class="form-control" id="colFormLabel" value="如何成為Youtuber" disabled>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="colFormLabel" class="col-sm-2 col-form-label">借閱人</label>
+                <div class="col-sm-10">
+                  <select class="form-control" id="colFormLabel" placeholder="ex.21">
+                    <option selected="">請選擇</option>
+                  </select>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">新增</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="RFIDFModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">RFID閘門警示</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            已完成代理 王大明 借閱  如何成為Youtuber。
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="seatModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">座位使用狀態</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="">
+              <label class="form-check-label" for="inlineRadio1">代預約</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="">
+              <label class="form-check-label" for="inlineRadio2">更換座位</label>
+            </div>
+            <div class="form-group row">
+              <label for="colFormLabel" class="col-sm-2 col-form-label">預約人</label>
+              <div class="col-sm-10">
+                <input type="text" name="" class="form-control" disabled value="王大明">
+              </div>
+            </div>
+            <form>
+              <div class="form-group row">
+                <label for="colFormLabel" class="col-sm-2 col-form-label">原座位</label>
+                <div class="col-sm-10">
+                  <select class="form-control" id="colFormLabel" placeholder="ex.21"disabled>
+                    <option selected="">A5</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="colFormLabel" class="col-sm-2 col-form-label">更換座位</label>
+                <div class="col-sm-10">
+                  <select class="form-control" id="colFormLabel" placeholder="ex.21">
+                    <option selected="">A6</option>
+                  </select>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">確認</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="seatFModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">座位使用狀態</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            已完成 王大明 更換座位服務。
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="alertModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">系統異常處理</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group row">
+              <label for="colFormLabel" class="col-sm-2 col-form-label">系統名稱</label>
+              <div class="col-sm-10">
+                <input type="text" name="" class="form-control" disabled value="環控系統">
+              </div>
+            </div>
+            <form>
+              <div class="form-group row">
+                <label for="colFormLabel" class="col-sm-2 col-form-label">異常來源</label>
+                <div class="col-sm-10">
+                  <input type="text" name="" class="form-control" disabled value="空調5">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="colFormLabel" class="col-sm-2 col-form-label">異常時間</label>
+                <div class="col-sm-10">
+                  <input type="text" name="" class="form-control" disabled value="2020-06-23 19:00:00">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-2 col-form-label">範本</label>
+                <div class="col-10">
+                  <select class="form-control">
+                    <option selected="">系統異常</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="colFormLabel" class="col-sm-2 col-form-label">訊息內容</label>
+                <div class="col-sm-10">
+                  <textarea type="text" name="" class="form-control" >廠商您好！ 環控系統 的 空調5 於時間 2020-06-23 19:00:00，請盡速處理。謝謝！</textarea>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">送出</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="alertFModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">系統異常處理</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            已送出訊息給 環控系統 廠商。
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="lightFModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">監視系統即時畫面</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            已開啟電燈12 的 電源。
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="multiMediaModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">互動多媒體內容</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group row">
+              <label for="colFormLabel" class="col-sm-2 col-form-label">上傳圖片</label>
+              <div class="col-sm-10">
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" id="customFile">
+                  <label class="custom-file-label" for="customFile" data-browse="請選擇圖片">按此上傳</label>
+                </div>
+              </div>
+            </div>
+            <form>
+              <div class="form-group row">
+                <label for="colFormLabel" class="col-sm-2 col-form-label">文字描述</label>
+                <div class="col-sm-10">
+                  <textarea type="text" name="" class="form-control" >文字描述</textarea>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">新增</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="multiMediaFModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">互動多媒體內容</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            已新增新的 多媒體內容。
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="airConModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">環控(溫度)狀態</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group row">
+              <label for="colFormLabel" class="col-sm-2 col-form-label">設備名稱</label>
+              <div class="col-sm-10">
+                <input type="text" name="" class="form-control" disabled value="空調1">
+              </div>
+            </div>
+            <form>
+              <div class="form-group row">
+                <label for="colFormLabel" class="col-sm-2 col-form-label">現在溫度</label>
+                <div class="col-sm-10">
+                  <input type="text" name="" class="form-control" disabled value="33">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="colFormLabel" class="col-sm-2 col-form-label">設定溫度</label>
+                <div class="col-sm-10">
+                  <input type="text" name="" class="form-control"  value="28">
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">設定</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="airConFModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">環控(溫度)狀態</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            已完成 空調1 的 溫度設定為 28。
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://getbootstrap.com/docs/4.5/examples/dashboard/dashboard.js"></script>
+    <!-- Load d3.js and c3.js -->
+    <script src="https://c3js.org/js/d3-5.8.2.min-c5268e33.js" charset="utf-8"></script>
+    <script src="https://c3js.org/js/c3.min-bc946ede.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
+  </body>
+</html>
+<script type="text/javascript">
+
+  $('.table1').DataTable({
+    "language": {
+      "processing":   "處理中...",
+      "loadingRecords": "載入中...",
+      "lengthMenu":   "顯示 _MENU_ 項結果",
+      "zeroRecords":  "沒有符合的結果",
+      "info":         "顯示第 _START_ 至 _END_ 項結果，共 _TOTAL_ 項",
+      "infoEmpty":    "顯示第 0 至 0 項結果，共 0 項",
+      "infoFiltered": "(從 _MAX_ 項結果中過濾)",
+      "infoPostFix":  "",
+      "search":       "搜尋:",
+      "paginate": {
+          "first":    "第一頁",
+          "previous": "上一頁",
+          "next":     "下一頁",
+          "last":     "最後一頁"
+      },
+      "aria": {
+          "sortAscending":  ": 升冪排列",
+          "sortDescending": ": 降冪排列"
+      }
+    }
+  });
+var chart = c3.generate({
+  bindto: '#chart',
+  data: {
+    columns: [
+      ['data1', 30, 200, 110, 400, 150, 250],
+      ['data2', 50, 20, 10, 40, 15, 25],
+      ['data3', 30, 200, 120, 400, 150, 250],
+      ['data4', 50, 30, 10, 40, 15, 25],
+      ['data5', 30, 200, 130, 400, 150, 250],
+      ['data6', 50, 40, 10, 40, 15, 25],
+      ['data7', 30, 200, 140, 400, 150, 250],
+      ['data8', 50, 50, 10, 40, 15, 25],
+      ['data9', 30, 200, 150, 400, 150, 250],
+      ['data10', 50, 60, 10, 40, 15, 25],
+      ['data11', 30, 200, 160, 400, 150, 250],
+      ['data12', 50, 70, 10, 40, 15, 25],
+    ]
+  }
+});
+var chart = c3.generate({
+  bindto: '#chart2',
+  data: {
+      // iris data from R
+      columns: [
+          ['data1', 30],
+          ['data2', 120],
+          ['data3', 30],
+          ['data4', 120],
+          ['data5', 30],
+          ['data6', 120],
+          ['data7', 30],
+          ['data8', 120],
+      ],
+      type : 'pie',
+      onclick: function (d, i) { console.log("onclick", d, i); },
+      onmouseover: function (d, i) { console.log("onmouseover", d, i); },
+      onmouseout: function (d, i) { console.log("onmouseout", d, i); }
+  },
+  legend: {
+      show: false
+  }
+});
+var chart = c3.generate({
+  bindto: '#chart3',
+  data: {
+      columns: [
+          ['放置數', 300, 350, 300, 0, 0, 100],
+          ['取閱數', 130, 100, 140, 200, 150, 50]
+      ],
+      types: {
+          data1: 'step',
+          data2: 'area-step'
+      }
+  }
+});
+var chart = c3.generate({
+  bindto: '#chart4',
+  data: {
+      columns: [
+          ['書櫃感測', 30, 200, 100, 400, 150, 250],
+          ['活動感測', 130, 100, 140, 200, 150, 50]
+      ],
+      type: 'bar'
+  },
+  bar: {
+      width: {
+          ratio: 0.5 // this makes bar width 50% of length between ticks
+      }
+      // or
+      //width: 100 // this makes bar width 100px
+  }
+});
+var chart = c3.generate({
+  bindto: '#chart5',
+  data: {
+      columns: [
+          ['回饋次數', 30, 200, 100, 400, 150, 250],
+      ]
+  }
+});
+var chart = c3.generate({
+  bindto: '#chart6',
+  data: {
+      columns: [
+          ['出口一', 360],
+          ['出口二', 120],
+          ['出口三', 180],
+      ],
+      type : 'donut'
+  }
+});
+var chart = c3.generate({
+  bindto: '#chart7',
+  data: {
+      columns: [
+          ['使用中', 300, 350, 300, 0, 0, 0],
+          ['已預約', 130, 100, 140, 200, 150, 50]
+      ],
+      types: {
+          使用中: 'area',
+          已預約: 'area-spline'
+      }
+  }
+});
+var chart = c3.generate({
+  bindto: '#chart8',
+  data: {
+      columns: [
+          ['data1', -30, 200, 200, 400, -150, 250],
+          ['data2', 130, 100, -100, 200, -150, 50],
+          ['data3', -230, 200, 200, -300, 250, 250]
+      ],
+      type: 'bar',
+      groups: [
+          ['data1', 'data2']
+      ]
+  },
+  grid: {
+      y: {
+          lines: [{value:0}]
+      }
+  }
+});
+
+</script>
